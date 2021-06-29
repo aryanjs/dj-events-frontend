@@ -1,20 +1,42 @@
 {
-  "name": "dj-events-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "eslint": "7.29.0",
-    "eslint-config-next": "11.0.1"
-  }
+    "name": "dj-events-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "elint": "eslint --fix .",
+        "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "./**/*.{js,jsx,ts,tsx}": [
+            "eslint --fix"
+        ]
+    },
+    "dependencies": {
+        "next": "11.0.0",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "sass": "^1.35.1"
+    },
+    "devDependencies": {
+        "eslint": "7.29.0",
+        "eslint-config-next": "11.0.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-react": "^7.23.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.3.0"
+    }
 }
