@@ -1,6 +1,8 @@
 import Link from 'next/link'
 
-import styles from '../styles/Header.module.scss'
+import styles from '@/styles/Header.module.scss'
+
+import Search from './Search'
 export default function Header() {
     return (
         <header className={styles.header}>
@@ -10,11 +12,18 @@ export default function Header() {
                 </Link>
             </div>
 
+            <Search />
+
             <nav>
                 <ul>
                     <li>
                         <Link href="/events">
-                            <a>events</a>
+                            <a>Events</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/events/add">
+                            <a>Add Event</a>
                         </Link>
                     </li>
                 </ul>
