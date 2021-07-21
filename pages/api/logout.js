@@ -1,5 +1,6 @@
 import cookie from 'cookie'
 
+// eslint-disable-next-line no-unused-vars
 import { API_URL } from '@/config/index'
 
 export default async (req, res) => {

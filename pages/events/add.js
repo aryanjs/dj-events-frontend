@@ -7,7 +7,7 @@ import { toast, ToastContainer } from 'react-toastify'
 
 import Layout from '@/components/Layout'
 import { API_URL } from '@/config/index'
-//import { parseCookies } from '@/helpers/index'
+import { parseCookies } from '@/helpers/index'
 import styles from '@/styles/Form.module.scss'
 
 export default function AddEventPage({ token }) {
@@ -37,8 +37,8 @@ export default function AddEventPage({ token }) {
         const res = await fetch(`${API_URL}/events`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
-                /* Authorization: `Bearer ${token}` */
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`
             },
             body: JSON.stringify(values)
         })
@@ -145,7 +145,7 @@ export default function AddEventPage({ token }) {
     )
 }
 
-/* export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req }) {
     const { token } = parseCookies(req)
 
     return {
@@ -154,4 +154,3 @@ export default function AddEventPage({ token }) {
         }
     }
 }
- */
