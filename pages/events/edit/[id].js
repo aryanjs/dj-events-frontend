@@ -70,8 +70,8 @@ export default function EditEventPage({ evt, token }) {
         setValues({ ...values, [name]: value })
     }
 
-    // eslint-disable-next-line no-unused-vars
     const imageUploaded = async (e) => {
+        console.log(e)
         const res = await fetch(`${API_URL}/events/${evt.id}`)
         const data = await res.json()
 
